@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Configuration files
+.prettierrc.json
+eslint.config.js
+tsconfig.json
+
+# Lock files
+package-lock.json
+
+# Editor files
+.vscode/
+
+# OS files
+.DS_Store 
