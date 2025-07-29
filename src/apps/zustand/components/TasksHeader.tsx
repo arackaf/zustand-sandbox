@@ -1,4 +1,4 @@
-import { allViews } from '@/apps/zustand/constants'
+import { allViews } from '@/apps/common/constants'
 import { useTasksStore } from '@/apps/zustand/store/tasks'
 import { cn } from '@/utils'
 

@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react'
 import { useState } from 'react'
 
+import type { TasksState, TasksView } from '@/apps/common/types'
 import { TasksContext } from '@/apps/vanilla/context/TasksContext'
-import type { TasksState, TasksView } from '@/apps/vanilla/types'
 import { tasks as dummyTasks } from '@/data/dummy-tasks-data'
 import type { Task } from '@/types'
 

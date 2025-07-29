@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-import type { TasksState, TasksView } from '@/apps/zustand/types'
+import type { TasksState, TasksView } from '@/apps/common/types'
 import { tasks } from '@/data/dummy-tasks-data'
 import type { Task } from '@/types'
 

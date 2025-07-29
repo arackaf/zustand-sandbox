@@ -1,4 +1,4 @@
-import { allViews } from '@/apps/zustand-optimized/constants'
+import { allViews } from '@/apps/common/constants'
 import { useTasksStore } from '@/apps/zustand-optimized/store/tasks'
 import { cn } from '@/utils'
 

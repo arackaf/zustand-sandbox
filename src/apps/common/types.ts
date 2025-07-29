@@ -10,3 +10,7 @@ export type TasksState = {
   currentFilter: string
   setCurrentFilter: (newFilter: string) => void
 }
+
+export interface TasksListProps {
+  tasks: Task[]
+}

@@ -1,3 +1,3 @@
-import type { TasksView } from '@/apps/zustand-optimized/types'
+import type { TasksView } from '@/apps/common/types'
 
 export const allViews: TasksView[] = ['list', 'detailed', 'condensed']

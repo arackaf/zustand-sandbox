@@ -1,4 +1,4 @@
-import { allViews } from '@/apps/vanilla/constants'
+import { allViews } from '@/apps/common/constants'
 import { useTasksContext } from '@/apps/vanilla/hooks/useTaskContext'
 import { cn } from '@/utils'
 
