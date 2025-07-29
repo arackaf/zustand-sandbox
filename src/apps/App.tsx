@@ -1,29 +1,11 @@
-import { useEffect, useState } from 'react'
-
 import { VanillaApp } from '@/apps/vanilla/VanillaApp'
 import { ZustandOptimizedApp } from '@/apps/zustand-optimized/ZustandOptimizedApp'
 import { ZustandApp } from '@/apps/zustand/ZustandApp'
-import type { AppType } from '@/types'
+import { useAppSelection } from '@/hooks/useAppSelection'
 import { cn } from '@/utils'
-import { getStoredValue, setStoredValue } from '@/utils/storage'
-
-const LOCAL_STORAGE_KEY = 'zustand-sandbox-current-app'
-
-const apps = new Set<AppType>(['vanilla', 'zustand', 'zustand-optimized'])
 
 export const App = () => {
-  const [app, setApp] = useState<AppType>(() => {
-    const saved = getStoredValue<AppType>(LOCAL_STORAGE_KEY, 'vanilla')
-    if (apps.has(saved)) {
-      return saved
-    }
-    return 'vanilla'
-  })
-
-  // Sync app type to local storage whenever app state changes
-  useEffect(() => {
-    setStoredValue(LOCAL_STORAGE_KEY, app)
-  }, [app])
+  const { app, setApp } = useAppSelection()
 
   return (
     <div className="p-2">
