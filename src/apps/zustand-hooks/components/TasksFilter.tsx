@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 
-import { useTasksStoreOptimized } from '@/apps/zustand-optimized/store/tasks'
+import { useActions, useCurrentFilter } from '@/apps/zustand-hooks/store/tasks'
 
 export const TasksFilter = () => {
   console.log('Rendering Filter')
 
-  const currentFilter = useTasksStoreOptimized((state) => state.currentFilter)
-  const setCurrentFilter = useTasksStoreOptimized((state) => state.setCurrentFilter)
+  const currentFilter = useCurrentFilter()
+  const { setCurrentFilter } = useActions()
+
   const [inputValue, setInputValue] = useState(currentFilter)
 
   useEffect(() => {

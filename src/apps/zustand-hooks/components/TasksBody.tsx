@@ -1,14 +1,14 @@
 import { TasksCondensed } from '@/apps/common/components/TasksCondensed'
 import { TasksDetailed } from '@/apps/common/components/TasksDetailed'
 import { TasksList } from '@/apps/common/components/TasksList'
-import { useTasksStoreOptimized } from '@/apps/zustand-optimized/store/tasks'
+import { useCurrentFilter, useCurrentView, useTasks } from '@/apps/zustand-hooks/store/tasks'
 
 export const TasksBody = () => {
   console.log('Rendering TasksBody')
 
-  const currentView = useTasksStoreOptimized((state) => state.currentView)
-  const tasks = useTasksStoreOptimized((state) => state.tasks)
-  const currentFilter = useTasksStoreOptimized((state) => state.currentFilter)
+  const currentFilter = useCurrentFilter()
+  const currentView = useCurrentView()
+  const tasks = useTasks()
 
   const filteredTasks = currentFilter
     ? tasks.filter(

@@ -1,12 +1,12 @@
 import { allViews } from '@/apps/common/constants'
-import { useTasksStoreOptimized } from '@/apps/zustand-optimized/store/tasks'
+import { useActions, useCurrentView } from '@/apps/zustand-hooks/store/tasks'
 import { cn } from '@/utils'
 
 export const TasksHeader = () => {
   console.log('Rendering TasksHeader')
 
-  const currentView = useTasksStoreOptimized((state) => state.currentView)
-  const setCurrentView = useTasksStoreOptimized((state) => state.setCurrentView)
+  const currentView = useCurrentView()
+  const { setCurrentView } = useActions()
 
   return (
     <div className="flex gap-1">

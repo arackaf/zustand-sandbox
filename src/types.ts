@@ -6,4 +6,4 @@ export type Task = {
   user: string
 }
 
-export type AppType = 'zustand' | 'vanilla' | 'zustand-optimized'
+export type AppType = 'vanilla' | 'zustand' | 'zustand-optimized' | 'zustand-hooks'

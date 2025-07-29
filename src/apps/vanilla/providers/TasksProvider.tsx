@@ -3,13 +3,13 @@ import { useState } from 'react'
 
 import type { TasksState, TasksView } from '@/apps/common/types'
 import { TasksContext } from '@/apps/vanilla/context/TasksContext'
-import { tasks as dummyTasks } from '@/data/dummy-tasks-data'
+import { tasks as initialTasks } from '@/data/dummy-tasks-data'
 import type { Task } from '@/types'
 
 export const TasksProvider = ({ children }: { children: ReactNode }) => {
   console.log('Rendering TasksProvider')
 
-  const [tasks, setTasks] = useState<Task[]>(dummyTasks)
+  const [tasks, setTasks] = useState<Task[]>([...initialTasks])
   const [currentView, setCurrentView] = useState<TasksView>('list')
   const [currentFilter, setCurrentFilter] = useState<string>('')
 

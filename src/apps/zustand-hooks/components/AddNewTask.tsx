@@ -1,18 +1,10 @@
-import { useShallow } from 'zustand/react/shallow'
-
-import { useTasksStoreOptimized } from '@/apps/zustand-optimized/store/tasks'
+import { useActions, useTasks } from '@/apps/zustand-hooks/store/tasks'
 
 export const AddNewTask = () => {
   console.log('Rendering AddNewTask')
 
-  const [tasks, setTasks] = useTasksStoreOptimized(useShallow((state) => [state.tasks, state.setTasks]))
-
-  // const { tasks, setTasks } = useTasksStoreOptimized(
-  //   useShallow(state => ({
-  //     tasks: state.tasks,
-  //     setTasks: state.setTasks,
-  //   }))
-  // );
+  const tasks = useTasks()
+  const { setTasks } = useActions()
 
   return (
     <div>

@@ -1,11 +1,11 @@
 import { create } from 'zustand'
 
 import type { TasksState, TasksView } from '@/apps/common/types'
-import { tasks } from '@/data/dummy-tasks-data'
+import { tasks as initialTasks } from '@/data/dummy-tasks-data'
 import type { Task } from '@/types'
 
-export const useTasksStore = create<TasksState>((set) => ({
-  tasks,
+export const useTasksStoreOptimized = create<TasksState>((set) => ({
+  tasks: [...initialTasks],
   setTasks: (arg: Task[] | ((tasks: Task[]) => Task[])) => {
     set((state) => {
       return {
